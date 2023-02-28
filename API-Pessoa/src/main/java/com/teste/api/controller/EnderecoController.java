@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,7 +22,7 @@ public class EnderecoController {
 	@Autowired
 	private EnderecoService enderecoService;
 	
-    @PostMapping 
+    @PostMapping("/{pessoaId}")
     public EnderecoModel criarEndereco(@PathVariable Long pessoaId, @RequestBody @Valid EnderecoModel endereco) {
         return enderecoService.salvarEndereco(pessoaId, endereco);
     }
@@ -37,9 +36,9 @@ public class EnderecoController {
     public EnderecoModel consultarEndereco(@PathVariable Long id) {
         return enderecoService.consultarEndereco(id);
     }
-    
+    /*
     @PutMapping("/{id}/principal")
     public EnderecoModel escolhePrincipal(@PathVariable Long pessoaId, @PathVariable Long id) {
         return enderecoService.definirPrincipal(pessoaId, id);
-    }
+    }*/
 }

@@ -35,21 +35,21 @@ public class EnderecoModel {
 
 	@ManyToOne
     @JoinColumn(name = "pessoa_id")
-	private PessoaModel pessoaModel;
+	private PessoaModel pessoa_id;
 	
 	public EnderecoModel() {
 		// TODO Auto-generated constructor stub
 	}
 
 	public EnderecoModel(Long id, String lougradouro, String cep, String numero, String cidade,
-			boolean principal,PessoaModel pessoaModel) {
+			boolean principal,PessoaModel pessoa_id) {
 		super();
 		this.id = id;
 		this.lougradouro = lougradouro;
 		this.cep = cep;
 		this.numero = numero;
 		this.cidade = cidade;
-		this.pessoaModel = pessoaModel;
+		this.pessoa_id = pessoa_id;
 		this.principal = principal;
 	}
 
@@ -102,11 +102,11 @@ public class EnderecoModel {
 	}
 
 	public PessoaModel getPessoaModel() {
-		return pessoaModel;
+		return pessoa_id;
 	}
 
 	public void setPessoaModel(PessoaModel pessoaModel) {
-		this.pessoaModel = pessoaModel;
+		this.pessoa_id = pessoaModel;
 	}
 
 	@Override

@@ -29,7 +29,7 @@ public class PessoaModel {
 	@NotNull
 	private LocalDate dataNascimento;
 	
-	@OneToMany(mappedBy = "pessoa", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "pessoa_id", cascade = CascadeType.ALL)
 	private List<EnderecoModel> endereco = new ArrayList<>();
 	
 	public PessoaModel() {

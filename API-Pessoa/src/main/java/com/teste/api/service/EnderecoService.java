@@ -3,6 +3,7 @@ package com.teste.api.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.teste.api.exception.NegocioException;
 import com.teste.api.model.EnderecoModel;
@@ -11,6 +12,7 @@ import com.teste.api.repository.EnderecoRepository;
 
 import jakarta.transaction.Transactional;
 
+@Service
 public class EnderecoService {
 
 	@Autowired
@@ -32,7 +34,7 @@ public class EnderecoService {
         endereco.setPessoaModel(pessoa);
         return enderecoRepository.save(endereco);
     }
-    
+   /* 
     public EnderecoModel definirPrincipal(Long pessoaId, Long enderecoId) {
         PessoaModel pessoa = new PessoaModel();
         pessoa.setId(pessoaId);
@@ -47,5 +49,5 @@ public class EnderecoService {
             .orElseThrow(() -> new NegocioException("Endereço não encontrado"));
         endereco.setPrincipal(true);
         return enderecoRepository.save(endereco);
-    }
+    }*/
 }
